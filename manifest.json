@@ -1,0 +1,39 @@
+{
+  "id": "/",
+  "name": "ArvianMotor - Rawat Motor Lebih Mudah",
+  "short_name": "ArvianMotor",
+  "description": "Catat riwayat servis motor matic Honda, cek kode kedipan FI, dan gabung komunitas ArvianMotor.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#F4F6FA",
+  "theme_color": "#0D2B55",
+  "lang": "id-ID",
+  "dir": "ltr",
+  "categories": ["lifestyle", "utilities", "productivity"],
+  "icons": [
+    { "src": "icons/icon-72.png", "sizes": "72x72", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-96.png", "sizes": "96x96", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-128.png", "sizes": "128x128", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-144.png", "sizes": "144x144", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-152.png", "sizes": "152x152", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    {
+      "name": "Tambah Catatan Servis",
+      "short_name": "Records",
+      "url": "./index.html#/records?add=1",
+      "icons": [{ "src": "icons/icon-96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Cek Kode FI",
+      "short_name": "FI Codes",
+      "url": "./index.html#/fi-codes",
+      "icons": [{ "src": "icons/icon-96.png", "sizes": "96x96" }]
+    }
+  ]
+}

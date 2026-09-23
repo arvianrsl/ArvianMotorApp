@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1" />
+<title>ArvianMotor - Rawat Motor Lebih Mudah</title>
+<meta name="description" content="Catat riwayat servis motor matic Honda, cek kode kedipan FI, dan gabung komunitas ArvianMotor." />
+
+<link rel="manifest" href="./manifest.json" />
+<meta name="theme-color" content="#0D2B55" />
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="ArvianMotor" />
+<link rel="icon" href="./icons/icon-32.png" sizes="32x32" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+
+<div id="app-shell">
+  <div class="offline-pill">Mode offline — menampilkan data tersimpan di perangkat</div>
+
+  <!-- ===== SPLASH / ONBOARDING ===== -->
+  <section id="view-splash" class="view">
+    <div class="splash-body">
+      <div class="brand-mark"><img src="./icons/icon-512.png" alt="Logo ArvianMotor" /></div>
+      <div>
+        <h1 class="splash-title">ArvianMotor</h1>
+        <p class="splash-tagline">Rawat Motor Lebih Mudah</p>
+      </div>
+    </div>
+    <button id="btn-get-start" class="btn-primary">Get Start</button>
+  </section>
+
+  <!-- ===== HOME ===== -->
+  <section id="view-home" class="view">
+    <div class="home-header">
+      <img class="home-logo" src="./icons/icon-192.png" alt="Logo ArvianMotor" />
+      <h1>ArvianMotor</h1>
+      <p>Rawat Motor Lebih Mudah</p>
+    </div>
+
+    <div class="home-content">
+      <div class="stat-row">
+        <div class="stat-box">
+          <div class="stat-value" id="stat-total-records">0</div>
+          <div class="stat-label">Total Catatan</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value" id="stat-last-service">-</div>
+          <div class="stat-label">Servis Terakhir</div>
+        </div>
+      </div>
+
+      <div id="home-reminder" class="reminder-banner" style="display:none;">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+        <div>
+          <p class="t">Waktunya cek oli</p>
+          <p class="d" id="home-reminder-text"></p>
+        </div>
+      </div>
+
+      <p class="section-label">Menu Utama</p>
+
+      <button class="card" data-nav="records">
+        <div class="card-icon tone-blue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <div class="card-body">
+          <p class="card-title">Records</p>
+          <p class="card-desc">Catat dan riwayat servis dengan mudah.</p>
+        </div>
+        <svg class="card-chevron" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+
+      <button class="card" data-nav="fi-codes">
+        <div class="card-icon tone-orange">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+        </div>
+        <div class="card-body">
+          <p class="card-title">FI Codes</p>
+          <p class="card-desc">Cek arti kode kedipan MIL Honda.</p>
+        </div>
+        <svg class="card-chevron" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+
+      <button class="card" data-nav="community">
+        <div class="card-icon tone-green">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="card-body">
+          <p class="card-title">Community</p>
+          <p class="card-desc">Join Komunitas WhatsApp.</p>
+        </div>
+        <svg class="card-chevron" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===== RECORDS ===== -->
+  <section id="view-records" class="view">
+    <div class="app-bar">
+      <div style="flex:1;">
+        <h1>Records</h1>
+        <p class="app-bar-sub">Riwayat servis motor kamu</p>
+      </div>
+    </div>
+
+    <div id="records-list" class="records-list"></div>
+
+    <div id="records-empty" class="empty-state" style="display:none;">
+      <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+      <p>Belum ada catatan servis.<br />Ketuk tombol + untuk menambahkan.</p>
+    </div>
+
+    <button id="btn-add-record" class="fab" aria-label="Tambah catatan servis">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
+    </button>
+  </section>
+
+  <!-- ===== FI CODES ===== -->
+  <section id="view-fi-codes" class="view">
+    <div class="app-bar">
+      <div style="flex:1;">
+        <h1>FI Codes</h1>
+        <p class="app-bar-sub">Arti kode kedipan MIL Honda</p>
+      </div>
+    </div>
+
+    <div class="search-bar">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+      <input id="fi-search" type="text" inputmode="search" placeholder="Cari nomor kode atau komponen..." />
+    </div>
+
+    <div id="fi-list" class="fi-list"></div>
+
+    <p class="fi-note">Cara baca: kedipan panjang (±1,3 detik) = 10, kedipan pendek (±0,3 detik) = 1. Jumlahkan kedipan untuk mendapat nomor kode. Untuk perbaikan, tetap disarankan cek ke bengkel/AHASS terdekat.</p>
+  </section>
+
+  <!-- ===== COMMUNITY ===== -->
+  <section id="view-community" class="view">
+    <div class="app-bar">
+      <div style="flex:1;">
+        <h1>Community</h1>
+        <p class="app-bar-sub">Komunitas pengguna ArvianMotor</p>
+      </div>
+    </div>
+
+    <div class="community-content">
+      <div class="community-hero">
+        <div class="icon-wrap">
+          <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg>
+        </div>
+        <h2>Gabung Komunitas WhatsApp</h2>
+        <p>Diskusi seputar perawatan motor matic Honda bareng sesama pengguna ArvianMotor.</p>
+      </div>
+
+      <div class="benefit-list">
+        <div class="benefit-item">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          <p>Tanya jawab langsung soal keluhan motor dan kode FI.</p>
+        </div>
+        <div class="benefit-item">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          <p>Info promo servis dan pengingat jadwal perawatan.</p>
+        </div>
+        <div class="benefit-item">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          <p>Berbagi pengalaman dengan sesama rider matic Honda.</p>
+        </div>
+      </div>
+
+      <button id="btn-join-whatsapp" class="btn-whatsapp">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.47 3.47 1.29 4.93L2 22l5.28-1.38a9.87 9.87 0 0 0 4.76 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.03h-.01a8.1 8.1 0 0 1-4.13-1.13l-.3-.18-3.06.8.82-2.98-.19-.31a8.11 8.11 0 0 1-1.24-4.32c0-4.49 3.66-8.15 8.15-8.15 2.18 0 4.22.85 5.76 2.39a8.1 8.1 0 0 1 2.39 5.77c0 4.49-3.66 8.11-8.19 8.11Z"/></svg>
+        Gabung Grup WhatsApp
+      </button>
+    </div>
+  </section>
+
+  <!-- ===== BOTTOM NAV ===== -->
+  <nav class="bottom-nav">
+    <button class="nav-item" data-route="home" data-nav="home">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="M9 22V12h6v10"/></svg>
+      <span>Home</span>
+    </button>
+    <button class="nav-item" data-route="records" data-nav="records">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      <span>Records</span>
+    </button>
+    <button class="nav-item" data-route="fi-codes" data-nav="fi-codes">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+      <span>FI Codes</span>
+    </button>
+    <button class="nav-item" data-route="community" data-nav="community">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.79.47 3.47 1.29 4.93L2 22l5.28-1.38a9.87 9.87 0 0 0 4.76 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2Zm0 18.03h-.01a8.1 8.1 0 0 1-4.13-1.13l-.3-.18-3.06.8.82-2.98-.19-.31a8.11 8.11 0 0 1-1.24-4.32c0-4.49 3.66-8.15 8.15-8.15 2.18 0 4.22.85 5.76 2.39a8.1 8.1 0 0 1 2.39 5.77c0 4.49-3.66 8.11-8.19 8.11Z"/></svg>
+      <span>Whatsapp</span>
+    </button>
+  </nav>
+
+  <!-- ===== ADD RECORD MODAL ===== -->
+  <div id="record-modal" class="modal-backdrop">
+    <div class="modal-sheet">
+      <div class="modal-handle"></div>
+      <h2>Tambah Catatan Servis</h2>
+      <form id="record-form">
+        <div class="field">
+          <label for="field-date">Tanggal Servis</label>
+          <input id="field-date" type="date" required />
+        </div>
+        <div class="field">
+          <label for="field-type">Jenis Servis</label>
+          <select id="field-type" required></select>
+        </div>
+        <div class="field">
+          <label for="field-km">Kilometer</label>
+          <input id="field-km" type="number" inputmode="numeric" min="0" placeholder="Contoh: 12000" />
+        </div>
+        <div class="field">
+          <label for="field-note">Catatan (opsional)</label>
+          <textarea id="field-note" placeholder="Misal: ganti oli + filter"></textarea>
+        </div>
+        <div class="modal-actions">
+          <button type="button" id="modal-cancel" class="btn-secondary">Batal</button>
+          <button type="submit" class="btn-primary">Simpan</button>
+        </div>
+      </form>
+      <button id="modal-close" class="icon-btn" style="position:absolute; top:14px; right:18px;" aria-label="Tutup">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- ===== INSTALL BANNER ===== -->
+  <div id="install-banner" class="install-banner">
+    <p>Pasang ArvianMotor di layar utama untuk akses lebih cepat.</p>
+    <button id="install-confirm" class="confirm">Pasang</button>
+    <button id="install-dismiss" class="dismiss" aria-label="Tutup">&times;</button>
+  </div>
+
+  <div id="toast" class="toast"></div>
+</div>
+
+<script src="./js/data.js"></script>
+<script src="./js/app.js"></script>
+</body>
+</html>
