@@ -1,16 +1,19 @@
-const CACHE_NAME = "arvianmotor-v1";
+const CACHE_NAME = "arvianmotor-v2";
 const APP_SHELL = [
   "./",
   "./index.html",
   "./manifest.json",
+  "./logoarvianmotor512.png.png",
   "./css/styles.css",
   "./js/data.js",
   "./js/app.js",
+  "./icons/icon-32.png",
   "./icons/icon-72.png",
   "./icons/icon-96.png",
   "./icons/icon-128.png",
   "./icons/icon-144.png",
   "./icons/icon-152.png",
+  "./icons/icon-167.png",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
   "./icons/icon-maskable-512.png",

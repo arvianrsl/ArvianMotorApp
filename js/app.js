@@ -271,32 +271,14 @@
     window.open(`https://wa.me/${WA_NUMBER}?text=${text}`, "_blank");
   });
 
-  // ---------- Install prompt (Add to Home Screen) ----------
-  let deferredPrompt = null;
-  const installBanner = $("#install-banner");
-
+  // ---------- Install prompt ----------
+  // Banner "Pasang ArvianMotor" sudah dihapus. Prompt bawaan browser juga
+  // ditahan supaya tidak muncul mengganggu.
   window.addEventListener("beforeinstallprompt", (e) => {
     e.preventDefault();
-    deferredPrompt = e;
-    if (localStorage.getItem(STORAGE_KEYS.onboarded) === "1") {
-      installBanner.classList.add("is-visible");
-    }
-  });
-
-  $("#install-confirm").addEventListener("click", async () => {
-    installBanner.classList.remove("is-visible");
-    if (!deferredPrompt) return;
-    deferredPrompt.prompt();
-    await deferredPrompt.userChoice;
-    deferredPrompt = null;
-  });
-
-  $("#install-dismiss").addEventListener("click", () => {
-    installBanner.classList.remove("is-visible");
   });
 
   window.addEventListener("appinstalled", () => {
-    installBanner.classList.remove("is-visible");
     showToast("ArvianMotor terpasang di perangkat");
   });
 
